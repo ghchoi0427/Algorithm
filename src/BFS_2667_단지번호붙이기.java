@@ -1,56 +1,53 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-
-import static java.lang.Integer.*;
+import java.util.Arrays;
 
 public class BFS_2667_단지번호붙이기 {
     static int[][] map;
     static boolean[][] flag;
     static int N;
-
-    static int countCell;
+    static int[] dx = {1, 0, -1, 0};
+    static int[] dy = {0, 1, 0, -1};
+    static int[] aparts;
+    static int apartsNum = 0;
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        N = parseInt(br.readLine());
+        N = Integer.parseInt(br.readLine());
         map = new int[N][N];
         flag = new boolean[N][N];
-        countCell = 0;
+        aparts = new int[N * N];
 
         for (int i = 0; i < N; i++) {
             String line = br.readLine();
             for (int j = 0; j < N; j++) {
-                map[j][i] = parseInt(String.valueOf(line.charAt(i)));
+                map[j][i] = Integer.parseInt(String.valueOf(line.charAt(j)));
                 flag[j][i] = false;
             }
         }
 
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
-                checkNeighbor(j, i);
+                if (map[j][i] == 1 && !flag[j][i]) {
+                    recursive(j, i);
+                    apartsNum++;
+                }
             }
         }
-
-        System.out.println(countCell);
+        System.out.println(apartsNum);
+        Arrays.stream(aparts).filter(e -> e > 0).sorted().forEach(System.out::println);
     }
 
-    private static void checkNeighbor(int x, int y) {
-        int[] dx = {1, 0, -1, 0};
-        int[] dy = {0, 1, 0, -1};
+    private static void recursive(int x, int y) {
+        if (map[x][y] == 1 && !flag[x][y]) {
+            flag[x][y] = true;
+            aparts[apartsNum]++;
 
-        for (int i = 0; i < 4; i++) {
-            if (y + dy[i] >= 0 && x + dx[i] >= 0 && y + dy[i] < N && x + dx[i] < N) {
-                setFlag(x, y, dx[i], dy[i]);
-                //checkNeighbor(x + dx[i], y + dy[i]);
+            for (int i = 0; i < 4; i++) {
+                if (x + dx[i] >= 0 && y + dy[i] >= 0 && x + dx[i] < N && y + dy[i] < N) {
+                    recursive(x + dx[i], y + dy[i]);
+                }
             }
-        }
-    }
-
-    private static void setFlag(int x, int y, int dx, int dy) {
-        if (map[y + dy][x + dx] != 1 || flag[y + dy][x + dx]) {
-            return;
-        }
-        flag[y + dy][x + dx] = true;
-        countCell += 1;
+        } else return;
     }
 }
