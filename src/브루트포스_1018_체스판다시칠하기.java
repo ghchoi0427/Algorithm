@@ -13,7 +13,6 @@ public class 브루트포스_1018_체스판다시칠하기 {
         int Black;
         int White;
 
-        int min;
         int result = 1000;
 
         for (int i = 0; i < y; i++) {
@@ -43,12 +42,11 @@ public class 브루트포스_1018_체스판다시칠하기 {
                         }
                     }
                 }
-                min = Math.min(Black, White);
-                if (result > min) result = min;
+                 result = Math.min(result, Math.min(Black,White));
             }
         }
-        System.out.println(result);
 
+        System.out.println(result);
     }
 
 }
