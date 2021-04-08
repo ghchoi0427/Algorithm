@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
-        import java.io.InputStreamReader;
+import java.io.InputStreamReader;
+import java.util.Arrays;
 
 public class 구현_2167_2차원배열의합 {
     public static void main(String[] args) throws Exception {
@@ -33,8 +34,6 @@ public class 구현_2167_2차원배열의합 {
             }
             result[i] = temp;
         }
-        for (int i : result) {
-            System.out.println(i);
-        }
+        Arrays.stream(result).forEach(System.out::println);
     }
 }
