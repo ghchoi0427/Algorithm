@@ -16,7 +16,7 @@ public class 구현_2567_색종이2 {
 
             for (int j = x; j < x + 10; j++) {
                 for (int k = y; k < y + 10; k++) {
-                    map[j + 1][k + 1] = 1;
+                    map[j+1][k+1] = 1;
                 }
             }
         }
@@ -31,6 +31,8 @@ public class 구현_2567_색종이2 {
                 }
             }
         }
+
         System.out.println(result);
+
     }
 }
