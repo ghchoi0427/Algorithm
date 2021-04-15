@@ -5,6 +5,7 @@ import java.util.List;
 
 public class 그래프_2606_바이러스 {
     static int result = 0;
+    static int ExcludeComputerOne = 1;
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -20,7 +21,7 @@ public class 그래프_2606_바이러스 {
             connect(computerList.get(Integer.parseInt(line[0]) - 1), computerList.get(Integer.parseInt(line[1]) - 1));
         }
         getLinkedCom(computerList.get(0));
-        System.out.println(result - 1);
+        System.out.println(result - ExcludeComputerOne);
     }
 
     private static void connect(Computer c1, Computer c2) {
