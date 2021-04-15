@@ -11,7 +11,7 @@ public class 그래프_2606_바이러스 {
         int num = Integer.parseInt(br.readLine());
         List<Computer> computerList = new ArrayList<>();
         for (int i = 0; i < num; i++) {
-            computerList.add(new Computer(i));
+            computerList.add(new Computer());
         }
 
         int rep = Integer.parseInt(br.readLine());
@@ -41,7 +41,6 @@ public class 그래프_2606_바이러스 {
 
 class Computer {
     List<Computer> connected = new ArrayList<>();
-    private final int computerNumber;
     private boolean visited = false;
 
     public boolean isVisited() {
@@ -50,10 +49,6 @@ class Computer {
 
     public void visit() {
         visited = true;
-    }
-
-    public Computer(int computerNumber) {
-        this.computerNumber = computerNumber;
     }
 
     public void link(Computer linkedComputer) {
