@@ -17,10 +17,10 @@ public class 그래프_2606_바이러스 {
         int rep = Integer.parseInt(br.readLine());
         for (int i = 0; i < rep; i++) {
             String[] line = br.readLine().split(" ");
-            connect(computerList.get(Integer.parseInt(line[0])), computerList.get(Integer.parseInt(line[1])));
+            connect(computerList.get(Integer.parseInt(line[0]) - 1), computerList.get(Integer.parseInt(line[1]) - 1));
         }
         getLinkedCom(computerList.get(0));
-        System.out.println(result);
+        System.out.println(result - 1);
     }
 
     private static void connect(Computer c1, Computer c2) {
@@ -30,7 +30,7 @@ public class 그래프_2606_바이러스 {
 
     private static void getLinkedCom(Computer computer) {
         for (Computer c : computer.connected) {
-            if(!c.isVisited()){
+            if (!c.isVisited()) {
                 c.visit();
                 getLinkedCom(c);
                 result++;
