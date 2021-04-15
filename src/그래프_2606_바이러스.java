@@ -41,7 +41,7 @@ public class 그래프_2606_바이러스 {
 
 class Computer {
     List<Computer> connected = new ArrayList<>();
-    private int computerNumber;
+    private final int computerNumber;
     private boolean visited = false;
 
     public boolean isVisited() {
