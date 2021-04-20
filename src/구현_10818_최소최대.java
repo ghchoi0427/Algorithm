@@ -8,7 +8,7 @@ public class 구현_10818_최소최대 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         br.readLine();
         String[] line = br.readLine().split(" ");
-        System.out.println(Arrays.stream(line).mapToInt(e->Integer.parseInt(e)).min().orElseThrow(NoSuchElementException::new));
-        System.out.println(Arrays.stream(line).mapToInt(e->Integer.parseInt(e)).max().orElseThrow(NoSuchElementException::new));
+        System.out.print(Arrays.stream(line).mapToInt(Integer::parseInt).min().orElseThrow(NoSuchElementException::new)+" ");
+        System.out.print(Arrays.stream(line).mapToInt(Integer::parseInt).max().orElseThrow(NoSuchElementException::new));
     }
 }
