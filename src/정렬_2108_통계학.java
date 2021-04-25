@@ -1,9 +1,8 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class 정렬_2108_통계학 {
     public static void main(String[] args) throws Exception {
@@ -17,6 +16,12 @@ public class 정렬_2108_통계학 {
         System.out.println((int) list.stream().mapToInt(e -> e).average().orElseThrow(Exception::new));
         list.stream().sorted().skip(num / 2).limit(1).forEach(System.out::println);
         list.stream().filter(e -> e > 0).forEach(e -> arr[e]++);
+        list.stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet()
+                .stream()
+                .max(Comparator.comparing(Map.Entry::getValue))
+                .ifPresent(System.out::println);
         System.out.println(Arrays.stream(arr).max().orElseThrow(NoSuchElementException::new));
         System.out.println(list.stream().max().orElseThrow(NoSuchElementException::new)
                 - list.stream().min().orElseThrow(NoSuchElementException::new));
