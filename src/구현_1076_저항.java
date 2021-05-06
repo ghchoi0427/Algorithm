@@ -7,7 +7,6 @@ class 구현_1076_저항 {
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        //String result="";
         long result = 0;
         Hashtable<String, Integer> table = new Hashtable<>();
         table.put("black", 0);
