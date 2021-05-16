@@ -9,12 +9,10 @@ public class 그리디_1541_잃어버린괄호 {
 
         int firstNumber = Integer.parseInt(subtract[0]);
         subtract[0] = "0";
-        System.out.println(firstNumber);
         for (String s : subtract) {
             String[] temp = s.split("\\+");
             int sum = Arrays.stream(temp).mapToInt(e -> Integer.parseInt(e)).sum();
             firstNumber -= sum;
-            System.out.println(firstNumber);
         }
 
         System.out.println(firstNumber);
