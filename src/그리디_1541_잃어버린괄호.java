@@ -5,16 +5,17 @@ import java.util.Arrays;
 public class 그리디_1541_잃어버린괄호 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String[] subtract = br.readLine().split("-");
+        String input = br.readLine();
+        String[] subtract = input.split("-");
+        boolean isFirstGroup = true;
+
 
         int firstNumber = Integer.parseInt(subtract[0]);
         subtract[0] = "0";
         for (String s : subtract) {
             String[] temp = s.split("\\+");
-            int sum = Arrays.stream(temp).mapToInt(e -> Integer.parseInt(e)).sum();
-            firstNumber -= sum;
-        }
 
+        }
         System.out.println(firstNumber);
     }
 }
