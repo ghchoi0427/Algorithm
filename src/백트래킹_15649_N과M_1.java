@@ -4,25 +4,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class 백트래킹_15649_N과M_1 {
+    static List<Node> nodes = new ArrayList<>();
+
     public static void main(String[] args) throws Exception {
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String[] input = br.readLine().split(" ");
         int n = Integer.parseInt(input[0]);
         // int m = Integer.parseInt(input[1]);
-        List<Node> nodes = new ArrayList<>();
 
         for (int i = 1; i <= n; i++) {
             nodes.add(new Node(i));
         }
 
-        for (Node node : nodes) {
-            node.addNode(nodes);
+    }
+
+    static Node findNodeById(int id) {
+        for (Node n : nodes) {
+            if (n.getNumber() == id) {
+                return n;
+            }
         }
+        return new Node(id);
     }
 }
 
 class Node {
     private List<Node> connected;
+
+    public void setConnected(List<Node> connected) {
+        this.connected = connected;
+    }
+
     private int number;
 
     public Node(int number) {
@@ -35,14 +48,6 @@ class Node {
 
     public void addNode(Node node) {
         connected.add(node);
-    }
-
-    public void addNode(List<Node> nodeList) {
-        for (Node n : nodeList) {
-            if (n.getNumber() != this.number) {
-                connected.add(n);
-            }
-        }
     }
 
     public List<Node> getConnected() {
