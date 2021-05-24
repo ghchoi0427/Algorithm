@@ -1,5 +1,3 @@
-import java.util.stream.IntStream;
-
 public class 수학_4673_셀프넘버 {
     public static void main(String[] args) throws Exception {
 
@@ -10,13 +8,13 @@ public class 수학_4673_셀프넘버 {
         }
     }
 
-    public static int d(int n) {
+    public static int getProperty(int n) {
         return Integer.toString(n).chars().mapToDouble(e->e-48).mapToInt(e->(int)e).sum()+n;
     }
 
     static boolean isH(int n) {
         for (int j = 1; j < n; j++) {
-            if (d(j) == n) {
+            if (getProperty(j) == n) {
                 return true;
             }
         }
