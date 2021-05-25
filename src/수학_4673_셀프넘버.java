@@ -9,7 +9,9 @@ public class 수학_4673_셀프넘버 {
     }
 
     public static int getProperty(int n) {
-        return Integer.toString(n).chars().mapToDouble(e->e-48).mapToInt(e->(int)e).sum()+n;
+        return Integer.toString(n).chars().asDoubleStream().mapToInt(e -> (int) (e - 48)).sum() + n;
+        //return Integer.toString(n).chars().mapToDouble(e -> e - 48).mapToInt(e -> (int) e).sum() + n;
+
     }
 
     static boolean isSelfNumber(int n) {
