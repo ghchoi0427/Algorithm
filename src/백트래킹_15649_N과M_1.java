@@ -22,11 +22,24 @@ public class 백트래킹_15649_N과M_1 {
             node.setConnected(nodes.stream().filter(e -> !e.equals(node)).collect(Collectors.toList()));
         }
 
+
+
+
+
     }
 }
 
 class Node {
     private List<Node> connected;
+    private boolean visited;
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
 
     public void setConnected(List<Node> connected) {
         this.connected = connected;
