@@ -15,14 +15,15 @@ public class 백트래킹_15649_N과M_1 {
 
         int n = Integer.parseInt(input[0]);
         int m = Integer.parseInt(input[1]);
-
         nodes = IntStream.rangeClosed(1, n).mapToObj(e -> new Node(e)).collect(Collectors.toList());
 
         for (Node node : nodes) {
             node.setConnected(nodes.stream().filter(e -> !e.equals(node)).collect(Collectors.toList()));
         }
 
-
+        for(Node node : nodes){
+            recursive(node);
+        }
     }
 
     static void recursive(Node node) {
