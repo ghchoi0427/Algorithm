@@ -23,15 +23,20 @@ public class 백트래킹_15649_N과M_1 {
         }
 
 
+    }
 
-
-
+    static void recursive(Node node) {
+        if (!node.isVisited()) {
+            System.out.println(node.getNumber());
+            node.setVisited(true);
+            node.getConnected().stream().forEach(백트래킹_15649_N과M_1::recursive);
+        }
     }
 }
 
 class Node {
     private List<Node> connected;
-    private boolean visited;
+    private boolean visited = false;
 
     public boolean isVisited() {
         return visited;
