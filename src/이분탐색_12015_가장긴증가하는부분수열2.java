@@ -22,8 +22,10 @@ public class 이분탐색_12015_가장긴증가하는부분수열2 {
         }
 
         for(Element n : elements){
+            n.
             System.out.println(n.getNext());
         }
+
 
 
     }
@@ -32,6 +34,7 @@ public class 이분탐색_12015_가장긴증가하는부분수열2 {
 class Element {
     int num;
     List<Element> next;
+    boolean visited;
 
     public List<Element> getNext() {
         return next;
