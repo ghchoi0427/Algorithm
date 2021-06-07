@@ -1,14 +1,16 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class 브루트포스_2798_블랙잭 {
 
     public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in);
-        String[] s = sc.nextLine().split(" ");
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] s = br.readLine().split(" ");
         int N = Integer.parseInt(s[0]);
         int M = Integer.parseInt(s[1]);
         int max = 0;
-        String[] cardsStr = sc.nextLine().split(" ");
+        String[] cardsStr = br.readLine().split(" ");
         int[] cards = new int[cardsStr.length];
         for (int i = 0; i < cardsStr.length; i++) {
             cards[i] = Integer.parseInt(cardsStr[i]);
