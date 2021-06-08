@@ -13,9 +13,7 @@ public class 브루트포스_14501_퇴사 {
             String[] line = br.readLine().split(" ");
             counsels.add(new Counsel(Integer.parseInt(line[0]),Integer.parseInt(line[1])));
         }
-        /*
-        do something
-         */
+
     }
 }
 
