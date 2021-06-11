@@ -12,5 +12,9 @@ public class 정렬_6986_절사평균 {
         int k = line[1];
         List<Float> list = new ArrayList<>();
 
+        for (int i = 0; i < n; i++) {
+            list.add(Float.parseFloat(br.readLine()));
+        }
+        System.out.println(String.format("%.2f",list.stream().sorted().skip(k).limit(n - 2 * k).mapToDouble(Float::doubleValue).average().orElseThrow(Exception::new)));
     }
 }
