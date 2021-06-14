@@ -10,7 +10,6 @@ public class 트리_11725_트리의부모찾기 {
         for (int i = 0; i < n; i++) {
             int[] line = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
-
         }
     }
 }
