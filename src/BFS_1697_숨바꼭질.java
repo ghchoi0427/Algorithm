@@ -5,7 +5,7 @@ import java.util.*;
 
 public class BFS_1697_숨바꼭질 {
 
-    static boolean[] visited = new boolean[100000];
+    static boolean[] visited = new boolean[100001];
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -35,8 +35,10 @@ public class BFS_1697_숨바꼭질 {
             search[2] = new Node0117(node0117.index * 2, node0117.cost + 1);
 
             for (Node0117 n : search) {
-                if (!visited[n.index] && n.index < 100000) {
-                    q.offer(n);
+                if (n.index >= 0 && n.index < visited.length) {
+                    if (!visited[n.index]) {
+                        q.offer(n);
+                    }
                 }
             }
         }
