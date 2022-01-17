@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Main {
+public class BFS_1697_숨바꼭질 {
 
     static boolean[] visited = new boolean[100000];
 
