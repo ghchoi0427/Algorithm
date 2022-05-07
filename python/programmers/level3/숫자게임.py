@@ -6,7 +6,7 @@ def solution(A,B):
   
   ac = bc = 0
 
-  while(bc < len(B) and ac<len(A) and bc < len(B)):
+  while(bc < len(B) and ac<len(A)):
     if(A[ac] < B[bc]):
       answer += 1
       bc += 1
