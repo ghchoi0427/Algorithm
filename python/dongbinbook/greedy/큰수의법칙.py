@@ -1,13 +1,10 @@
 n,m,k = map(int, input().split())
-d = [0 * i for i in range(n)]
 li = list(map(int, input().split()))
-for i in range(len(li)):
-  d[i]=li[i]
 result = 0
 
-d.sort()
-maxnum = d[-1]
-secondmax = d[-2]
+li.sort()
+maxnum = li[-1]
+secondmax = li[-2]
 
 while(True):
   for i in range(k):
