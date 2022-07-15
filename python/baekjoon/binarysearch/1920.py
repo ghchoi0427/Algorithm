@@ -1,9 +1,8 @@
-n = int(input())
+input()
 li = list(map(int, input().split()))
 li.sort()
-m = int(input())
+input()
 target = list(map(int, input().split()))
-result = []
 
 def search(arr, target, start, end):
   while(start <= end):
@@ -17,7 +16,4 @@ def search(arr, target, start, end):
   return 0
 
 for i in target:
-  result.append(search(li, i, 0, len(li)-1))
-
-for i in result:
-  print(i)
+  print(search(li, i, 0, len(li)-1))
